@@ -20,5 +20,29 @@ public class AirportDaoJpaImpl implements AirportDAO {
 	public Airport findById(int airportId) {
 		return em.find(Airport.class, airportId);
 	}
+	
+	@Override
+	public Airport findByIcaoCode(String icaoCode) {
+		
+		String jpql = "SELECT a FROM Airport a WHERE a.icaoCode = :icaoCode";
+		
+		return em.createQuery(jpql, Airport.class).setParameter("icaoCode", icaoCode).getSingleResult();
+	}
+	
+	@Override
+	public Airport searchByAirportName(String airportName) {
+		
+		String jpql = "SELECT a FROM Airport a WHERE a.airportName LIKE CONCAT('%', :airportName, '%')";
+		
+		return em.createQuery(jpql, Airport.class).setParameter("airportName", airportName).getSingleResult();
+	}
+	
+//	@Override
+//	public boolean createNewAirport(Airport airport) {
+//		
+//		String jpql = "SELECT a FROM Airport a WHERE a.airportName LIKE CONCAT('%', :airportName, '%')";
+//		
+//		return em.contains(airport);
+//	}
 
 }
