@@ -86,31 +86,19 @@
 		</div>
 	</div>
 	<br>
-<!-- 	<div class="row">
+
+	<div class="row">
 		<div class="col-1"></div>
 		<div class="col">
-
 			<form action="newairportpage.do" method="GET">
-				<button class="btn btn-primary" type="submit">Go To New
-					Airport</button>
+				<div class="d-grid gap-2">
+					<button class="btn btn-primary" type="submit" id="createButton">Create
+						a new airport</button>
+				</div>
 			</form>
 		</div>
 		<div class="col-1"></div>
 	</div>
-	<br> -->
-
-			<div class="row">
-				<div class="col-1"></div>
-				<div class="col">
-<form action="newairportpage.do" method="GET">
-					<div class="d-grid gap-2">
-						<button class="btn btn-primary" type="submit" id="createButton">Create a new airport</button>
-						<!-- <button class="btn btn-primary" type="button">Button</button> -->
-					</div>
-					</form>
-				</div>
-				<div class="col-1"></div>
-			</div>
 
 
 </main>

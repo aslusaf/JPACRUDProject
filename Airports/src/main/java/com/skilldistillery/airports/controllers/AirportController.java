@@ -24,6 +24,7 @@ public class AirportController {
 	@RequestMapping(path = { "getAirportsByState.do" })
 	public String searchByState(String state, Model model) {
 
+		if(state.isEmpty() || state == null) return "home";
 		List<Airport> airportList = dao.searchByState(state);
 		if (airportList == null || airportList.isEmpty())
 			return "airportnotfound";
@@ -36,6 +37,7 @@ public class AirportController {
 	@RequestMapping(path = { "getAirportsByName.do" })
 	public String searchByAirportName(String airportName, Model model) {
 
+		if(airportName.isEmpty() || airportName == null) return "home";
 		List<Airport> airportList = dao.searchByAirportName(airportName);
 		if (airportList == null || airportList.isEmpty())
 			return "airportnotfound";
@@ -76,7 +78,7 @@ public class AirportController {
 	public String searchDb(String query, Model model) {
 
 		if (query.isEmpty() || query == null)
-			return "airportnotfound";
+			return "home";
 		List<Airport> airportList = dao.searchDb(query);
 		if (airportList == null || airportList.isEmpty())
 			return "airportnotfound";
