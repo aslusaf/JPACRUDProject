@@ -20,23 +20,22 @@
 		<thead>
 
 			<tr class="table-primary">
-				<th colspan="6">Results for: ${searchedState}</th>
+				<th colspan="6">Results for: ${query}</th>
 			</tr>
 		</thead>
 		<tbody>
 
 			<tr class="table-primary">
-				<th>State</th>
 				<th>Name</th>
 				<th>ICAO Code</th>
 				<th>Type</th>
 				<th>City</th>
+				<th>State</th>
 				<th>Country</th>
 			</tr>
 
-			<c:forEach var="a" items="${airportsByState}">
+			<c:forEach var="a" items="${airports}">
 				<tr>
-					<td>${a.stateName} (${a.stateAbbreviation})</td>
 					<c:choose>
 						<c:when test="${empty a.airportLink || a.airportLink == 'NULL'}">
 							<td>${a.airportName}</td>
@@ -48,6 +47,7 @@
 					<td>${a.icaoCode}</td>
 					<td>${a.airportType}</td>
 					<td>${a.cityName}</td>
+					<td>${a.stateName} (${a.stateAbbreviation})</td>
 					<td>${a.countryAbbreviation}</td>
 				</tr>
 			</c:forEach>

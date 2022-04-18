@@ -11,47 +11,96 @@
 <jsp:include page="bootstrap.jsp" />
 </head>
 
-<nav id="navBar" class="navbar navbar-dark bg-dark">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="/"> <img
-			src="https://www.riversideca.gov/sites/default/files/img/Airport/Airport-01.png"
-			alt="" width="30" height="24" class="d-inline-block align-text-top">
-			Home
-		</a>
-		<form action="search.do" method="GET" class="d-flex">
-			<input class="form-control me-2" type="search" name="query"
-				placeholder="Search Database" aria-label="Search">
-			<button class="btn btn-outline-success" type="submit">Search</button>
-		</form>
-	</div>
-</nav>
+<jsp:include page="navbar.jsp" />
 
-<h1>Welcome to Airports!</h1>
+<div class="row">
+	<div class="col"></div>
+	<div class="col">
+		<br>
+		<h1>Welcome to Airports!</h1>
+	</div>
+	<div class="col"></div>
+</div>
+
 <br>
-<p>This website allows you to search and obtain information pertaining to virtually every airport across the entire Unites States. Select a search option below to get started.</p>
+
+<div class="row">
+	<div class="col-1"></div>
+	<div class="col">
+		<h5>This website allows you to search and obtain information
+			pertaining to virtually every airport across the entire Unites
+			States.</h5>
+		<h5>
+			Select a search option below to get started&nbsp;&nbsp;
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+				fill="currentColor" class="bi bi-arrow-down-square"
+				viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+					d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+</svg>
+		</h5>
+		<br>
+	</div>
+	<div class="col-1"></div>
+
+
+
+</div>
 
 <main class="container-fluid">
 
-	<form action="getAirportsByState.do" method="GET">
+	<!-- 	<form action="getAirportsByState.do" method="GET">
 		State: <input type="text" name="state" /> <input type="submit"
 			value="Search" />
-	</form>
+	</form> -->
 
-	<label for="exampleDataList" class="form-label">Datalist
-		example</label> <input class="form-control" list="datalistOptions"
-		id="exampleDataList" placeholder="Type to search...">
-	<datalist id="datalistOptions">
-		<option value="San Francisco">
-		<option value="New York">
-		<option value="Seattle">
-		<option value="Los Angeles">
-		<option value="Chicago">
-	</datalist>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col">
+				<form action="getAirportsByState.do" method="GET">
+					<label for="stateDataList" id="abc">Search
+							By State:</label><br> <input class="form-control form-control-lg"
+						type="text" name="state" list="datalistOptions" id="stateDataList"
+						placeholder="Type to search..." type="submit">
+					<datalist id="datalistOptions">
+						<option value="Alaska">
+						<option value="Colorado">
+						<option value="Texas">
+					</datalist>
+				</form>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+	<br>
 	
-		<form action="newAirport.do" method="GET">
-		
-	<input class="btn btn-primary" type="submit" value="Submit">
-	</form>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col">
+				<form action="getAirportsByName.do" method="GET">
+					<label for="stateDataList" id="abc">Search
+							By Name:</label><br> <input class="form-control form-control-lg"
+						type="text" name="airportName" id="airportName"
+						placeholder="Type to search..." type="submit">
+				</form>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-1"></div>
+		<div class="col">
+
+			<form action="newairportpage.do" method="GET">
+				<button class="btn btn-primary" type="submit">Go To New
+					Airport</button>
+			</form>
+		</div>
+		<div class="col-1"></div>
+	</div>
 
 </main>
 </body>

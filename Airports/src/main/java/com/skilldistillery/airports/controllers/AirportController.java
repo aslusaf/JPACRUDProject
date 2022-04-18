@@ -37,12 +37,33 @@ public class AirportController {
 		return "airports";
 	}
 	
+	@RequestMapping(path= {"getAirportsByName.do"})
+	public String searchByAirportName(String airportName, Model model) {
+		
+		List<Airport> airportList = dao.searchByAirportName(airportName);
+		if (airportList == null || airportList.isEmpty()) return "airportnotfound";
+		model.addAttribute("airports", airportList);
+		model.addAttribute("query", airportName);
+		
+		return "airportsearch";
+	}
+	
 	@RequestMapping(path= {"newAirport.do"})
 	public String createNewAirport(String name, String city, String state, Model model) {
+		
+		if(name.isEmpty() || name == null || city.isEmpty() || city == null || state.isEmpty() || state == null) return "invalidinput";
+		
+		Airport newAirport = new Airport();
+		newAirport.setAirportName(name);
+		newAirport.setCityName(city);
+		newAirport.setStateName(state);
+		
+		boolean success = dao.createNewAirport(newAirport);
 		
 		model.addAttribute("name", name);
 		model.addAttribute("city", city);
 		model.addAttribute("state", state);
+		model.addAttribute("success", success);
 		
 		return "newairport";
 	}
@@ -50,11 +71,18 @@ public class AirportController {
 	@RequestMapping(path= {"search.do"})
 	public String searchDb(String query, Model model) {
 		
+		if(query.isEmpty() || query == null) return "airportnotfound";
 		List<Airport> airportList = dao.searchDb(query);
 		if (airportList == null || airportList.isEmpty()) return "airportnotfound";
-		model.addAttribute("airportsByState", airportList);
+		model.addAttribute("airports", airportList);
+		model.addAttribute("query", query);
 		
-		return "airports";
+		return "airportsearch";
+	}
+	
+	@RequestMapping(path= {"newairportpage.do"})
+	public String goToNewAirport() {
+		return "newairport";
 	}
 	
 

@@ -11,20 +11,8 @@
 <jsp:include page="bootstrap.jsp" />
 </head>
 
-<nav id="navBar" class="navbar navbar-dark bg-dark">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="/"> <img
-			src="https://www.riversideca.gov/sites/default/files/img/Airport/Airport-01.png"
-			alt="" width="30" height="24" class="d-inline-block align-text-top">
-			Home
-		</a>
-		<form action="search.do" method="GET" class="d-flex">
-			<input class="form-control me-2" type="search" name="query"
-				placeholder="Search Database" aria-label="Search">
-			<button class="btn btn-outline-success" type="submit">Search</button>
-		</form>
-	</div>
-</nav>
+<jsp:include page="navbar.jsp"/>
+
 <div class="container">
 	<div class="row">
 		<div class="col-1"></div>
@@ -67,7 +55,7 @@
 		</div>
 	</div>
 
-	${name} ${city} ${state}
+	${name} ${city} ${state} ${success}
 
 </main>
 </body>

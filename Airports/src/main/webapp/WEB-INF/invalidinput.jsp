@@ -7,13 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Airport Not Found</title>
+<title>Invalid input</title>
 <jsp:include page="bootstrap.jsp"/>
 </head>
 
 <jsp:include page="navbar.jsp"/>
 
-<h1>Airport Not Found</h1>
+<h1>Invalid Input</h1>
 
 <main class="container-fluid">
 
