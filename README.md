@@ -11,9 +11,10 @@ I didn't have any specific issues on this project. The front end styling with Bo
 
 #### Technologies Used:
 Backend {
+- JUnit Testing
 - Tomcat
 - MySQL
-- Spring
+- Spring MVC
 - Spring Boot
 - Gradle
 - JSP
