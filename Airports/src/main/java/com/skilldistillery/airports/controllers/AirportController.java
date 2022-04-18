@@ -85,5 +85,17 @@ public class AirportController {
 		return "newairport";
 	}
 	
+	@RequestMapping(path= {"deleteAirport.do"})
+	public String deleteAirport(Integer airportId, Model model) {
+		
+		if(airportId == null) return "invalidinput";
+		
+		boolean success = dao.deleteAirport(airportId);
+		
+		model.addAttribute("success", success);
+		
+		return "airportdeleted";
+	}
+	
 
 }

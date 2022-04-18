@@ -62,5 +62,14 @@ public class AirportDaoJpaImpl implements AirportDAO {
 		
 		return em.contains(airport);
 	}
+	
+	@Override
+	public boolean deleteAirport(Integer id) {
+		
+		Airport airportToDelete = em.find(Airport.class, id);
+		em.remove(airportToDelete);
+		
+		return !em.contains(airportToDelete);
+	}
 
 }

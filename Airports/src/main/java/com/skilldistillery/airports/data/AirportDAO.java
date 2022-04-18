@@ -12,5 +12,6 @@ public interface AirportDAO {
 	public List<Airport> searchByState(String state);
 	public boolean createNewAirport(Airport airport);
 	public List<Airport> searchDb(String query);
+	public boolean deleteAirport(Integer id);
 
 }

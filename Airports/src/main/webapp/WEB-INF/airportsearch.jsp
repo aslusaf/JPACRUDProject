@@ -26,6 +26,8 @@
 		<tbody>
 
 			<tr class="table-primary">
+			
+				<th>Delete Record</th>
 				<th>Name</th>
 				<th>ICAO Code</th>
 				<th>Type</th>
@@ -36,6 +38,17 @@
 
 			<c:forEach var="a" items="${airports}">
 				<tr>
+					<td>${a.icaoCode}
+					
+					
+					<form action="deleteAirport.do" method="GET">
+					<button type="submit" class="btn btn-danger" value="${a.id}" name="airportId">Delete</button>
+					</form>
+					
+					
+					
+					
+					</td>
 					<c:choose>
 						<c:when test="${empty a.airportLink || a.airportLink == 'NULL'}">
 							<td>${a.airportName}</td>
