@@ -11,7 +11,7 @@
 <jsp:include page="bootstrap.jsp" />
 </head>
 
-<jsp:include page="navbar.jsp"/>
+<jsp:include page="navbar.jsp" />
 
 <main class="container-fluid">
 
@@ -20,14 +20,13 @@
 		<thead>
 
 			<tr class="table-primary">
-				<th colspan="6">Results for: ${query}</th>
+				<th colspan="7">Results for: ${query}</th>
 			</tr>
 		</thead>
 		<tbody>
 
-			<tr class="table-primary">
-			
-				<th>Delete Record</th>
+			<tr class="table-primary" id="headers">
+				<th>Edit Record</th>
 				<th>Name</th>
 				<th>ICAO Code</th>
 				<th>Type</th>
@@ -37,17 +36,21 @@
 			</tr>
 
 			<c:forEach var="a" items="${airports}">
+
 				<tr>
-					<td>${a.icaoCode}
-					
-					
-					<form action="deleteAirport.do" method="GET">
-					<button type="submit" class="btn btn-danger" value="${a.id}" name="airportId">Delete</button>
-					</form>
-					
-					
-					
-					
+					<td width=150px>
+						<div class="d-flex flex-row mx-auto" id="editButtons">
+							<form action="deleteAirport.do" method="GET">
+								<button type="submit" class="btn btn-sm btn-danger"
+									value="${a.id}" name="airportId">Delete</button>
+							</form>
+							&nbsp;&nbsp;&nbsp;
+							<form action="goToUpdateAirport.do" method="GET">
+								<button type="submit" class="btn btn-sm btn-primary"
+									value="${a.id}" name="airportId">Update</button>
+							</form>
+						</div>
+
 					</td>
 					<c:choose>
 						<c:when test="${empty a.airportLink || a.airportLink == 'NULL'}">
@@ -60,7 +63,7 @@
 					<td>${a.icaoCode}</td>
 					<td>${a.airportType}</td>
 					<td>${a.cityName}</td>
-					<td>${a.stateName} (${a.stateAbbreviation})</td>
+					<td>${a.stateName}(${a.stateAbbreviation})</td>
 					<td>${a.countryAbbreviation}</td>
 				</tr>
 			</c:forEach>

@@ -8,15 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Invalid input</title>
-<jsp:include page="bootstrap.jsp"/>
+<jsp:include page="bootstrap.jsp" />
 </head>
 
-<jsp:include page="navbar.jsp"/>
+<jsp:include page="navbar.jsp" />
 
 <h1>Invalid Input</h1>
 
-<main class="container-fluid">
-
-	</main>
+<main class="container-fluid"></main>
 </body>
 </html>

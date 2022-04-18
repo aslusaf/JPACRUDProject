@@ -7,20 +7,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Create</title>
+<title>Update</title>
 <jsp:include page="bootstrap.jsp" />
 </head>
 
 <jsp:include page="navbar.jsp" />
 
 <div class="container">
+	<jsp:include page="alerts.jsp" />
 	<div class="row">
-		<div class="col"></div>
+		<div class="col-3"></div>
 		<div class="col">
 			<br>
-			<h1>Create a new airport</h1>
+			<h1>Update an existing airport</h1>
+			<br>
 		</div>
-		<div class="col"></div>
+		<div class="col-3"></div>
 	</div>
 </div>
 
@@ -30,31 +32,34 @@
 		<div class="row">
 			<div class="col-2"></div>
 			<div class="col">
-				<form action="newAirport.do" method="GET">
+				<form action="updateAirport.do" method="GET">
+
+					<input type="hidden" name="airportId" value="${airport.id}">
+
 					<div class="mb-3">
 						<label for="formControlInput1" class="form-label">Airport
 							Name</label> <input type="text" name="name" class="form-control"
-							id="exampleFormControlInput1"
-							placeholder="ex. Denver International Airport">
+							id="exampleFormControlInput1" value="${airport.airportName}">
 					</div>
 
 					<div class="mb-3">
 						<label for="exampleFormControlInput1" class="form-label">City</label>
 						<input type="text" name="city" class="form-control"
-							id="exampleFormControlInput1" placeholder="ex. Denver">
+							id="exampleFormControlInput1" value="${airport.cityName}">
 					</div>
 
 					<div class="mb-3">
 						<label for="exampleFormControlInput1" class="form-label">State</label>
 						<input type="text" name="state" class="form-control"
-							id="exampleFormControlInput1" placeholder="ex. Colorado">
+							id="exampleFormControlInput1" value="${airport.stateName}">
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-primary">Update</button>
 				</form>
 			</div>
 			<div class="col-2"></div>
 		</div>
 	</div>
+
 
 </main>
 </body>

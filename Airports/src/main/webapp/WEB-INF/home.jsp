@@ -12,14 +12,17 @@
 </head>
 
 <jsp:include page="navbar.jsp" />
+<div class="row">
+	<jsp:include page="alerts.jsp" />
+</div>
 
 <div class="row">
-	<div class="col"></div>
+	<div class="col-3"></div>
 	<div class="col">
 		<br>
 		<h1>Welcome to Airports!</h1>
 	</div>
-	<div class="col"></div>
+	<div class="col-3"></div>
 </div>
 
 <br>
@@ -28,7 +31,7 @@
 	<div class="col-1"></div>
 	<div class="col">
 		<h5>This website allows you to search and obtain information
-			pertaining to virtually every airport across the entire Unites
+			pertaining to virtually every airport across the entire United
 			States.</h5>
 		<h5>
 			Select a search option below to get started&nbsp;&nbsp;
@@ -43,25 +46,18 @@
 	</div>
 	<div class="col-1"></div>
 
-
-
 </div>
 
 <main class="container-fluid">
-
-	<!-- 	<form action="getAirportsByState.do" method="GET">
-		State: <input type="text" name="state" /> <input type="submit"
-			value="Search" />
-	</form> -->
 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col">
 				<form action="getAirportsByState.do" method="GET">
-					<label for="stateDataList" id="abc">Search
-							By State:</label><br> <input class="form-control form-control-lg"
-						type="text" name="state" list="datalistOptions" id="stateDataList"
+					<label for="stateDataList" id="abc">Search By State:</label><br>
+					<input class="form-control form-control-lg" type="text"
+						name="state" list="datalistOptions" id="stateDataList"
 						placeholder="Type to search..." type="submit">
 					<datalist id="datalistOptions">
 						<option value="Alaska">
@@ -74,15 +70,15 @@
 		</div>
 	</div>
 	<br>
-	
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col">
 				<form action="getAirportsByName.do" method="GET">
-					<label for="stateDataList" id="abc">Search
-							By Name:</label><br> <input class="form-control form-control-lg"
-						type="text" name="airportName" id="airportName"
+					<label for="stateDataList" id="abc">Search By Name:</label><br>
+					<input class="form-control form-control-lg" type="text"
+						name="airportName" id="airportName"
 						placeholder="Type to search..." type="submit">
 				</form>
 			</div>
@@ -90,7 +86,7 @@
 		</div>
 	</div>
 	<br>
-	<div class="row">
+<!-- 	<div class="row">
 		<div class="col-1"></div>
 		<div class="col">
 
@@ -101,6 +97,21 @@
 		</div>
 		<div class="col-1"></div>
 	</div>
+	<br> -->
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col">
+<form action="newairportpage.do" method="GET">
+					<div class="d-grid gap-2">
+						<button class="btn btn-primary" type="submit" id="createButton">Create a new airport</button>
+						<!-- <button class="btn btn-primary" type="button">Button</button> -->
+					</div>
+					</form>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
 
 </main>
 </body>

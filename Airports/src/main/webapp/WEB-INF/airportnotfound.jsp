@@ -8,15 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Airport Not Found</title>
-<jsp:include page="bootstrap.jsp"/>
+<jsp:include page="bootstrap.jsp" />
 </head>
 
-<jsp:include page="navbar.jsp"/>
+<jsp:include page="navbar.jsp" />
 
 <h1>Airport Not Found</h1>
 
-<main class="container-fluid">
-
-	</main>
+<main class="container-fluid"></main>
 </body>
 </html>
