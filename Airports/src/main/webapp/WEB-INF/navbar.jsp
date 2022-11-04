@@ -4,7 +4,7 @@
 <html>
 <nav id="navBar" class="navbar navbar-dark bg-dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="http://3.136.215.243:8080/Airports"> <img
+		<a class="navbar-brand" href="https://austin-lambert.com/Airports"> <img
 			src="https://www.riversideca.gov/sites/default/files/img/Airport/Airport-01.png"
 			alt="" width="32" height="32" class="d-inline-block align-text-top">
 			&nbsp;<strong>Home</strong>

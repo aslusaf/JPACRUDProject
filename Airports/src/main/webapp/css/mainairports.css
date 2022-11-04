@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#abc {
+#abc, #createButton {
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -9,17 +9,8 @@
 	text-align: center;
 }
 
-h1 {
-	text-align: center;
-}
-
 #alerts {
 	text-align: center;
 	font-size: 18px;
 	margin: 5px 5px;
-}
-
-#createButton {
-	font-size: 20px;
-	font-weight: bold;
 }
